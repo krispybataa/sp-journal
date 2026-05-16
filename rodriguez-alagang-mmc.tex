@@ -1,0 +1,296 @@
+%%
+%% ACM Journal Article — Alagang MMC
+%% Author: Augustus Clark Raphael P. Rodriguez
+%%
+%% SUBMISSION MODE: Use \documentclass[manuscript, screen, review]{acmart}
+%% CAMERA-READY:   Use \documentclass[acmsmall]{acmart}
+%%
+\documentclass[manuscript, screen, review]{acmart}
+
+%% ============================================================
+%% PREAMBLE: Rights & Journal Metadata
+%% Fill these in once you receive the rights form from ACM.
+%% Leave as-is during drafting/review.
+%% ============================================================
+\setcopyright{acmcopyright}
+\copyrightyear{2026}
+\acmYear{2026}
+\acmDOI{XXXXXXX.XXXXXXX}            % Provided by ACM after acceptance
+
+%% Which journal are you submitting to? Replace JACM with the correct
+%% journal code. Common examples: TOCHI, TOSEM, HEALTH, PACMHCI.
+\acmJournal{JACM}
+\acmVolume{0}                        % Filled in by ACM
+\acmNumber{0}                        % Filled in by ACM
+\acmArticle{0}                       % Filled in by ACM
+\acmMonth{0}                         % Filled in by ACM
+
+%% ============================================================
+%% DOCUMENT BODY
+%% ============================================================
+\begin{document}
+
+%% ------------------------------------------------------------
+%% TITLE
+%% The optional argument is the short title shown in page headers.
+%% Keep the short title under ~50 characters.
+%% ------------------------------------------------------------
+\title[Alagang MMC]{Alagang MMC: A Human-Centered Care Coordination
+  System for Makati Medical Center via the CeHRes Roadmap}
+
+%% ------------------------------------------------------------
+%% AUTHORS & AFFILIATIONS
+%% Each \author block must have a matching \affiliation block.
+%% \email and \orcid are optional but encouraged.
+%% For the journal version, do NOT use \authornote for "equal contribution"
+%% unless it genuinely applies — it changes the footnote marker behavior.
+%% ------------------------------------------------------------
+\author{Augustus Clark Raphael P. Rodriguez}
+\email{aprodriguez7@up.edu.ph}
+% \orcid{XXXX-XXXX-XXXX-XXXX}       % Add your ORCID if you have one
+\affiliation{%
+  \institution{University of the Philippines Manila}
+  \department{Department of Physical Sciences and Mathematics}
+  \city{Manila}
+  \country{Philippines}
+}
+
+\author{Marbert John C. Marasigan}
+% \email{adviser-email@up.edu.ph}    % Add adviser's email if co-authoring
+\affiliation{%
+  \institution{University of the Philippines Manila}
+  \department{Department of Physical Sciences and Mathematics}
+  \city{Manila}
+  \country{Philippines}
+}
+
+%% Short author list for page headers (use "et al." if >2 authors)
+\renewcommand{\shortauthors}{Rodriguez and Marasigan}
+
+%% ------------------------------------------------------------
+%% ABSTRACT
+%% Target: 150–250 words. Should cover: problem, method, key results,
+%% and significance. This is NOT your thesis abstract — condense it.
+%% A journal abstract must be self-contained (no citations).
+%% ------------------------------------------------------------
+\begin{abstract}
+  % TODO: Write a condensed, self-contained abstract covering:
+  %   1. The problem: process hurdles in MMC's patient care coordination
+  %   2. The gap: limited integration and disjoint systems
+  %   3. Your approach: Human-Centered Design via the CeHRes Roadmap
+  %   4. What you built: Alagang MMC (describe system briefly)
+  %   5. Key results: UEQ scores, usability findings, stakeholder outcomes
+  %   6. Significance: contribution to digital health in Philippine context
+  %
+  % Example structure (replace with real content):
+  % "Patient care coordination in large Philippine hospitals faces [problem].
+  %  Existing systems [gap]. We designed and developed Alagang MMC, a
+  %  [description], using the CeHRes Roadmap to ensure stakeholder alignment
+  %  throughout all phases. Evaluation via the User Experience Questionnaire
+  %  revealed [results]. These findings demonstrate [significance]."
+\end{abstract}
+
+%% ------------------------------------------------------------
+%% CCS CONCEPTS (MANDATORY for papers over 2 pages)
+%% Generate the XML block at: https://dl.acm.org/ccs
+%% Search for concepts like "Human-centered computing", "Health informatics"
+%% Paste the generated block here and add the matching \ccsdesc lines below.
+%% ------------------------------------------------------------
+\begin{CCSXML}
+% TODO: Replace this entire block with the output from https://dl.acm.org/ccs
+% Suggested concepts to search for:
+%   - Human-centered computing > User interface design
+%   - Applied computing > Health informatics
+%   - Human-centered computing > Participatory design
+%   - Applied computing > Health care information systems
+<ccs2012>
+ <concept>
+  <concept_id>REPLACE_WITH_GENERATED_ID</concept_id>
+  <concept_desc>Human-centered computing~User interface design</concept_desc>
+  <concept_significance>500</concept_significance>
+ </concept>
+ <concept>
+  <concept_id>REPLACE_WITH_GENERATED_ID</concept_id>
+  <concept_desc>Applied computing~Health informatics</concept_desc>
+  <concept_significance>300</concept_significance>
+ </concept>
+</ccs2012>
+\end{CCSXML}
+
+% TODO: Match these \ccsdesc lines to your CCSXML block above
+\ccsdesc[500]{Human-centered computing~User interface design}
+\ccsdesc[300]{Applied computing~Health informatics}
+
+%% ------------------------------------------------------------
+%% KEYWORDS (MANDATORY for papers over 2 pages)
+%% 4–6 keywords, comma-separated, lowercase except proper nouns.
+%% ------------------------------------------------------------
+\keywords{human-centered design, digital health, care coordination,
+  CeHRes Roadmap, health information systems, Philippines}
+
+%% ------------------------------------------------------------
+%% RECEIVED DATES — filled in by journal editors, leave as placeholders
+%% ------------------------------------------------------------
+\received{20 January 2026}
+\received[revised]{MONTH DAY, YEAR}
+\received[accepted]{MONTH DAY, YEAR}
+
+%% This command generates the title block, author list, abstract, etc.
+\maketitle
+
+%% ============================================================
+%% SECTION 1: INTRODUCTION
+%% Journal intro is tighter than a thesis intro. Target: ~600–900 words.
+%% Structure: context → problem → gap in literature → your contribution
+%% → paper organization (1 short paragraph at the end of the intro).
+%% ============================================================
+\section{Introduction}
+% TODO: Adapt from your thesis Background of the Study + Statement of the Problem.
+% Compress into a single narrative. Do NOT list subsections here — journal
+% introductions are typically a flowing discussion, not subdivided.
+%
+% Cover:
+%   - Digital health landscape in the Philippines and MMC's context
+%   - The three process hurdles (limited accessibility, lack of integration,
+%     disjoint systems) — weave them into the narrative rather than bullets
+%   - HCD and CeHRes Roadmap as your response to the gap
+%   - Your three research questions (can be stated as numbered RQs inline)
+%   - A closing "roadmap" paragraph: "The rest of this paper is organized
+%     as follows: Section 2 reviews related work... Section 3 describes..."
+
+
+%% ============================================================
+%% SECTION 2: RELATED WORK / BACKGROUND
+%% Situate your work in prior literature. ~800–1200 words.
+%% Organize by theme, not chronologically.
+%% ============================================================
+\section{Related Work}
+% TODO: Synthesize literature from your thesis into thematic subsections.
+% Suggested subsections:
+
+\subsection{Digital Health Systems in Developing Countries}
+% Context on HIS in the Philippines (Sucaldito et al., Guzman, etc.)
+% What works, what doesn't, what gaps remain.
+
+\subsection{Human-Centered Design in Healthcare}
+% HCD philosophy and its healthcare applications (Leary, Landeiro et al.)
+% CeHRes Roadmap specifically — describe its phases and why it fits.
+
+\subsection{Patient Care Coordination Systems}
+% Existing coordination systems, their limitations.
+% How Alagang MMC addresses the gap.
+
+
+%% ============================================================
+%% SECTION 3: METHODOLOGY
+%% Explain what you did and how. ~1000–1500 words.
+%% Must be reproducible: a reader should understand how to replicate your study.
+%% ============================================================
+\section{Methodology}
+
+\subsection{Research Design}
+% State your overall approach: action research / design science research /
+% user-centered iterative development — whichever framing fits your work.
+% Briefly justify why this design is appropriate.
+
+\subsection{CeHRes Roadmap Application}
+% Walk through each phase of the CeHRes Roadmap as you applied it:
+%   - Contextual Inquiry (stakeholder interviews: Dr. Rodriguez, Dr. Javier)
+%   - Value Specification
+%   - Design
+%   - Operationalization
+%   - Summative Evaluation
+% Include your DFD, UCD, and activity diagrams where appropriate
+% (use \includegraphics with images from sp-manuscript/images/).
+
+\subsection{System Architecture}
+% Describe the technical design of Alagang MMC:
+%   - Key modules: Clinician Profile Manager, Appointment Management,
+%     Clinician Directory, Account Creation, Appointment Booking
+%   - Technology stack
+%   - Include your ERD and pipeline diagram if relevant
+
+\subsection{Evaluation Approach}
+% Describe how you evaluated: UEQ, sprint-based usability testing,
+% participants (patients, secretaries, clinicians), protocol.
+
+
+%% ============================================================
+%% SECTION 4: RESULTS
+%% Present findings objectively. ~800–1200 words.
+%% Use tables and figures to present data efficiently.
+%% ============================================================
+\section{Results}
+
+\subsection{Usability and User Experience Findings}
+% Present UEQ results (benchmark comparison, scale scores).
+% Reference your benchmark figure and scale structure figure.
+% State which aspects scored above/below benchmark and what that means.
+
+\subsection{Stakeholder Feedback}
+% Qualitative findings from sprint reviews, bug reports,
+% and clinician/patient interviews.
+% Tie back to your three research questions.
+
+\subsection{System Outcomes}
+% Any quantitative metrics on system usage or workflow improvement.
+
+
+%% ============================================================
+%% SECTION 5: DISCUSSION
+%% Interpret your results, link to literature, acknowledge limitations.
+%% ~600–900 words.
+%% ============================================================
+\section{Discussion}
+
+\subsection{Implications for Digital Health in the Philippines}
+% What do your results mean for HIS adoption in developing-country hospitals?
+% Connect to Sucaldito et al., Livieri et al., Libadia et al.
+
+\subsection{HCD and the CeHRes Roadmap as a Framework}
+% How did stakeholder-driven development influence outcomes (RQ3)?
+% Compare to Landeiro et al. or similar HCD-in-healthcare work.
+
+\subsection{Limitations}
+% Be honest: single-site study, sample size, generalizability,
+% any technical constraints. This strengthens credibility.
+
+
+%% ============================================================
+%% SECTION 6: CONCLUSION
+%% ~200–350 words. No new information. Summarize contribution,
+%% answer your three RQs, and state future work.
+%% ============================================================
+\section{Conclusion}
+% TODO: Summarize:
+%   - What you built and why
+%   - Direct answers to your three research questions
+%   - Significance of using HCD/CeHRes for care coordination
+%   - Future work: expansion beyond MMC, integration with iHIMS,
+%     longitudinal adoption studies, etc.
+
+
+%% ============================================================
+%% ACKNOWLEDGMENTS
+%% Thank anyone who helped but is not an author.
+%% Do NOT include your adviser here if they are a co-author above.
+%% ============================================================
+\begin{acks}
+  % TODO: Acknowledge funding sources, research participants (can be kept
+  % anonymous as "the clinicians and staff of MMC who participated"),
+  % and any institutional support.
+  %
+  % Example: "The authors thank the clinicians, secretaries, and patients
+  % of Makati Medical Center who participated in this study. This work
+  % was supported by [funding source, if any]."
+\end{acks}
+
+%% ============================================================
+%% BIBLIOGRAPHY
+%% The .bib file below must be in the same directory as this .tex file.
+%% The ACM-Reference-Format.bst style is provided by acmart.
+%% ============================================================
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+\end{document}
