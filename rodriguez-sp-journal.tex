@@ -1,12 +1,13 @@
 %%
-%% ACM Journal Article — Alagang MMC
+%% ACM Journal Article
 %% Author: Augustus Clark Raphael P. Rodriguez
 %%
 %% SUBMISSION MODE: Use \documentclass[manuscript, screen, review]{acmart}
 %% CAMERA-READY:   Use \documentclass[acmsmall]{acmart}
 %%
 \documentclass[manuscript, screen, review]{acmart}
-
+\usepackage{graphicx} % Required for including images
+\usepackage{subcaption} % Required for the subfigure environment
 %% ============================================================
 %% PREAMBLE: Rights & Journal Metadata
 %% Fill these in once you receive the rights form from ACM.
@@ -15,7 +16,7 @@
 \setcopyright{acmcopyright}
 \copyrightyear{2026}
 \acmYear{2026}
-\acmDOI{XXXXXXX.XXXXXXX}            % Provided by ACM after acceptance
+\acmDOI{XXXXXXX.XXXXXXX}   
 
 %% Which journal are you submitting to? Replace JACM with the correct
 %% journal code. Common examples: TOCHI, TOSEM, HEALTH, PACMHCI.
@@ -97,29 +98,58 @@ A CeHRes Roadmap Application for Care Coordination in the Philippines}
 %% Paste the generated block here and add the matching \ccsdesc lines below.
 %% ------------------------------------------------------------
 \begin{CCSXML}
-% TODO: Replace this entire block with the output from https://dl.acm.org/ccs
-% Suggested concepts to search for:
-%   - Human-centered computing > User interface design
-%   - Applied computing > Health informatics
-%   - Human-centered computing > Participatory design
-%   - Applied computing > Health care information systems
 <ccs2012>
- <concept>
-  <concept_id>REPLACE_WITH_GENERATED_ID</concept_id>
-  <concept_desc>Human-centered computing~User interface design</concept_desc>
-  <concept_significance>500</concept_significance>
- </concept>
- <concept>
-  <concept_id>REPLACE_WITH_GENERATED_ID</concept_id>
-  <concept_desc>Applied computing~Health informatics</concept_desc>
-  <concept_significance>300</concept_significance>
- </concept>
-</ccs2012>
+   <concept>
+       <concept_id>10003120.10011738.10011774</concept_id>
+       <concept_desc>Human-centered computing~Accessibility design and evaluation methods</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10002944.10011122.10002945</concept_id>
+       <concept_desc>General and reference~Surveys and overviews</concept_desc>
+       <concept_significance>100</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10010583.10010588.10010598.10011666</concept_id>
+       <concept_desc>Hardware~Touch screens</concept_desc>
+       <concept_significance>100</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10003120.10003121.10003122.10010854</concept_id>
+       <concept_desc>Human-centered computing~Usability testing</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10003120.10003121.10003122.10003332</concept_id>
+       <concept_desc>Human-centered computing~User models</concept_desc>
+       <concept_significance>300</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10002951.10003227.10003228</concept_id>
+       <concept_desc>Information systems~Enterprise information systems</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10002978.10003029.10011150</concept_id>
+       <concept_desc>Security and privacy~Privacy protections</concept_desc>
+       <concept_significance>100</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10010405.10010444.10010447</concept_id>
+       <concept_desc>Applied computing~Health care information systems</concept_desc>
+       <concept_significance>300</concept_significance>
+       </concept>
+ </ccs2012>
 \end{CCSXML}
 
-% TODO: Match these \ccsdesc lines to your CCSXML block above
-\ccsdesc[500]{Human-centered computing~User interface design}
-\ccsdesc[300]{Applied computing~Health informatics}
+\ccsdesc[500]{Human-centered computing~Accessibility design and evaluation methods}
+\ccsdesc[100]{General and reference~Surveys and overviews}
+\ccsdesc[100]{Hardware~Touch screens}
+\ccsdesc[500]{Human-centered computing~Usability testing}
+\ccsdesc[300]{Human-centered computing~User models}
+\ccsdesc[500]{Information systems~Enterprise information systems}
+\ccsdesc[100]{Security and privacy~Privacy protections}
+\ccsdesc[300]{Applied computing~Health care information systems}
 
 %% ------------------------------------------------------------
 %% KEYWORDS (MANDATORY for papers over 2 pages)
@@ -145,19 +175,26 @@ A CeHRes Roadmap Application for Care Coordination in the Philippines}
 %% → paper organization (1 short paragraph at the end of the intro).
 %% ============================================================
 \section{Introduction}
-% TODO: Adapt from your thesis Background of the Study + Statement of the Problem.
-% Compress into a single narrative. Do NOT list subsections here — journal
-% introductions are typically a flowing discussion, not subdivided.
-%
-% Cover:
-%   - Digital health landscape in the Philippines and MMC's context
-%   - The three process hurdles (limited accessibility, lack of integration,
-%     disjoint systems) — weave them into the narrative rather than bullets
-%   - HCD and CeHRes Roadmap as your response to the gap
-%   - Your three research questions (can be stated as numbered RQs inline)
-%   - A closing "roadmap" paragraph: "The rest of this paper is organized
-%     as follows: Section 2 reviews related work... Section 3 describes..."
+\label{sec:introduction}
+Digital health interventions have emerged has as a notable cornerstone for the intelligent deployment of modern healthcare infrastructure, offering great transformative potential to drive policy, elevate care quality, and alleviate infationary operational costs \cite{foodanddrugadministration_2020_what, fatehi_2020_what}. Nonetheless, the deployment of sustainable Health Information Systems (HIS) in developing nations remains consistently burdened by fragmented infrastructures, outdated adoption strategies, and critical deficiencies in governance frameworks \cite{epizitone_2023_a,rahman_2024_healthcare,sucaldito_2025_challenges}. Across Southeast Asia, the primary operational challenges centers around bridging acccessibility gaps within highly uncoordinated spaces \cite{lu_2021_assessment}. Furthermore, in local Philippine context, macro-level systemic issues take shape as underutilized digital records and overly convoluted data extraction mechanisms, demonstrating that a significant portion of HIS shortcomings are rooted in a continued lack of attention to human and contextual factors as opposed to the usual hardware or softare constraints \cite{garcia_2021_health,leary_2022_an}. 
 
+Human-centered pain points are reasonable evidence even within highly advanced institutional settings. As such, this study investigates the care coordination ecosystem of a private tertiary training lospital located in the Philippines. Historically, the institute was a leading pionner in transitioning to a digitized environment; however, there exists a severe disconnect between the hospital's backend administrative capabilities and its public-facing patient care coordination mechanisms. This architectural gap forces out-patients to navigate an ineffective user experience best characterized by operational vagueness and high logistical friction prior to the patient's clinical consultation proper. 
+
+Such an institutional vulnerability is further worsened by deeply ingrained local patient behavior. Where international healthcare frameworks that mandate primary care providers to serve as the formal `gatekeepers' and coordinaors of the patient journey \cite{DOH_AO_2020_0024}, local Filipino patient populations consistently bypass primary care levels to directly consult with their specialists of choice \cite{Lajeunesse2012}. Labelled ``specialist-mindset'', the decision-making frequently leads to high occurences of ``physician-hopping'' leaving patients to personally sholder the administrative burden of searching for healthcare providers and negotiating schedules \cite{Lajeunesse2012,Chang682}. Furthermore, patient-clinician communcation channels such as Rakuten Viber or standard SMS text manually manage by inidivual clinician-secreatary pairs \cite{Rodriguez_A}. While a cultural norm, such ad-hoc methods lead to a distributed human burden that is simply unsustainable, further resulting in frequent miscommnuications, uncoordinated schedule changes, and heightened risks of appointment mismanagements \cite{Rodriguez_A,Chang682}. 
+
+To address these gaps, this study details the design, development, and deployment of a mutli-interface digital health intervention fundamentally grounded on the CeHRes (Centre for eHealth and Wellbeing Research) Roadmap 2.0 \cite{Kip2025CeHRes}. By synthesizing HCD activiites with structured business modeling and continuous evaluation cycles, the framework ensures a complete structural alignment between the technology, the users, and the orgianizational context \cite{wentzel_keeping_an_eye,Kip2025CeHRes}. With the framework as guidance, this study systematically explores three research questions: 
+(1) What specific patient experiences are indicative of an ineffective experience within the medical institute's existing care coordination structure?
+(2) How can the pillars of Human-Centered Design be leveraged to construct a localized, evidence-based care coordination platform?
+(3) How does stakeholder-driven development directly influence the operational success and subjective user experience of a new care coordination system within a resource-constrained clinical environment?
+
+By answering these questions, this study provides three notable contributions to the digital health and human-computer interaction body of literature: 
+\begin{itemize}
+    \item \textbf{Methodological}: The study documents a complete traversal of all five interrelated phases of the CeHRes Roadmap 2.0, successfully executing a live deployment of the resulting prototype to address an operational implementation gap explicitly cited in prior eHealth literature \cite{ganjali_2024_ivrs}.
+    \item \textbf{Practical}: The study delivers a fully functional, department-agnostic care coordination platform comprising integrated interfaces for patients, medical secretaries, clinicians, and system administrators, complete with a physical on-site kiosk interface that establishes a secure digital handoff via dynamic QR code generation.
+    \item \textbf{Empirical}: The study presents a robust mixed-method evaluation combining a two-week Simple Remote Exploratory Test (SRET) with a summative User Experience Questionnaire (UEQ) deployment ($n=14$), supplying empirical evidence of a definitive qualitative shift from issue-focused reporting to high user satisfaction across distinct pragmatic and hedonic scales \cite{laugwitz_2008_construction, schrepp_2023_user}.
+\end{itemize}
+
+The remainder of the study reads as follows: 
 
 %% ============================================================
 %% SECTION 2: RELATED WORK / BACKGROUND
@@ -165,20 +202,33 @@ A CeHRes Roadmap Application for Care Coordination in the Philippines}
 %% Organize by theme, not chronologically.
 %% ============================================================
 \section{Related Work}
-% TODO: Synthesize literature from your thesis into thematic subsections.
-% Suggested subsections:
+\label{sec:related-work}
 
-\subsection{Digital Health Systems in Developing Countries}
-% Context on HIS in the Philippines (Sucaldito et al., Guzman, etc.)
-% What works, what doesn't, what gaps remain.
+\subsection{Infrastructure and Human Factors in Health Information Systems}
+\label{sub:infrastructure_human_factors}
 
-\subsection{Human-Centered Design in Healthcare}
-% HCD philosophy and its healthcare applications (Leary, Landeiro et al.)
-% CeHRes Roadmap specifically — describe its phases and why it fits.
+The trajectory of the evolution of HIS is fundamentally repreesnted by the transition from manual record management to integrated digital clinical workflows \cite{epizitone_2023_a}. Prior works establish the successful adoption of modernizations depend on a complex itneraction betwene technological, organizational, environmental, and human-factors, including a baseline computer literacy and interface ``user-friendliness'' \cite{epizitone_2023_a}. A robust HIS provides great utility to its stakeholders through ease of access, cost reduction, opened lines of communcation, and the facilitation of a novel mode of healthcare delivery \cite{epizitone_2023_a}. 
 
-\subsection{Patient Care Coordination Systems}
-% Existing coordination systems, their limitations.
-% How Alagang MMC addresses the gap.
+However, in developing countries, the implementation of such sustainable health informatics contineus to face context-specific barriers \cite{rahman_2024_healthcare}. Empirical reviews of similar implementations consistently document low governance scores throughout, indicative of deficiencies within specific HIS deployment strategies \cite{sucaldito_2025_challenges}. Resource-limited environments such as Bangladesh and various Southeast Asian nations are severely impacted by fragmented and non-digitzed workflows, lack of training, mismanaged investements, and an absence of cetralized medical databases \cite{lu_2021_assessment,rahman_2024_healthcare}. Such challenges directly mirror the digtal health ecosystem of the Philippines, with underutilized electronic health records, complex data layers, and rigid infrastructure preventing the delpoyment of comprehensive national frameworks \cite{garcia_2021_health,sucaldito_2025_challenges}.
+
+This fragmentation becomes highly evident when mapping outpatient care coordination and triage workflows. Within local context, patients regularly bypass primary care providers, opting instead to navigate their healthcare journey by directly consulting clinical specialists \cite{Lajeunesse2012}. Such behavior leads to widespread operational inefficiencies, creating a culture of ``physician hopping'' due to the low societal prioritization of family medicine \cite{Lajeunesse2012}. While natioanl regulatory bodies have issued directives attempting to position primary care levels as the central coordinator and initial point of contact within a patient's healthcare journey \cite{DOH_AO_2020_0024}, the lack of voerall automated, enterprise-grade navigation forces institutes to rely on informal, human-managed communication channels like Rakuten Viber or standard SMS \cite{Rodriguez_A}. Due to the reliance on a distributed human burden for appointment management, the introdution of severe process bottlenecks, scheduling, and poor patient health outcomes \cite{Rodriguez_A,Chang682}. Addressing these deficienceis would require and approach actively centered around human and contextual factors throughout the design and development lifecyle \cite{garcia_2021_health,leary_2022_an}.
+
+\subsection{Human-Centered Design for Specialized Digital Health Interventions}
+\label{sub:hcd_digital_health}
+Human-Centered Design represents a rigorous, innovative problem-solving approach that prioritizes the explicit needs, constraints, and mental models of stakeholders throughout the software development process \cite{leary_2022_an,wentzel_keeping_an_eye}. Historically, the application of HCD principles within health informatics has demonstrated that incorporating user needs is a critical prerequisite to improving overall clinical adoption, systematic trust, and popuolation-wide health outcomes \cite{leary_2022_an,oconnor_2016_understanding}. Through the active involvement of end-users in interative prototyping loops, developers would be ablt to ensure that the underlying design logic accurately matches stakeholder needs and local realities \cite{gttgens_2021_the,wentzel_keeping_an_eye}.
+
+The utility brought by user-centered design (UCD) and co-creative methodologies is well-documented across distinct clinical contexts \cite{gttgens_2021_the}. Watchler et al.\cite{wachtler_2018_development} leveraged iterative focus groups to extract user requirements for software targeting depression, ensuring the application resonated positively with pateint metnal scales. On a similare note, Woodard et al. \cite{woodard_2018_the} engaged with clinicans and patients to refine and optimize a specialized decision support system for oncology survivors, proving that iterative feedback loops are a crucial step to making complex medical information accessibly to non-clinical audiences. Furthermore, prior works highlight the efficacy of ethnographic observations, laboratory simulations, and contextual usability testing towards building functional prototypes for complex conditions such as asthma, tuberculosis, and HIV management, even within resource-constrained environemtns \cite{catalani_2014_a,eberhart_2019_using,wentzel_keeping_an_eye}. 
+
+In the ace of documented successes, there exists a crticical gap in digital health literature. A vast majority of existing public-access digital health interventions (DHIs) are condition-specific platforms explicity built for isolated patient populations managing chronic illnesses \cite{gttgens_2021_the,oconnor_2016_understanding}. There is currently very little attention towards developing multi-role institutional systems that seek to unify separate operational needs of patients, medical secretaries, and clinicans within a singular care coordination framework. Prior works validate that ignoring the discussed workflows adds immense logistical burdens to clinical workflows \cite{Chang682,wentzel_keeping_an_eye}. Consequently, this study fills this gap by detailing a centralized, department-agnostic system architecture that treats care coordination not as a single-user app, but as a multi-interface ecosystem. 
+
+\subsection{Methodological Frameworks and Evaluative Paradigms in eHealth}
+\label{sub:methdological_frameworks_evaluation}
+To ensure software viability and reduce deployment failures, health informatics research have to be anchored on strutured development frameworks \cite{Kip2025CeHRes}. Standard software engineering practices such as Agile or Design Thinking priotized accelerated software development cycles and quick-fire ideation. While these are effective for consumer-grade software, they lack a specialized multi-stakeholder and domain-specific alignment needed for clinical deployment \cite{Kip2025CeHRes}. In contrast, the CeHRes Roadmap offers a holistic, eHealth-specific framework, integrating human-centered activities with formal business modeling across five highly interrelated phases: \textbf{Contextual Inquiry},\textbf{Value Specification}, \textbf{Design}, \textbf{Operationalization}, and \textbf{Summative Evaluation} \cite{Kip2025CeHRes,vanVelsen2012Personas}. 
+
+Through embedding continuous and iterative cycles between each phsae, the framework guides the translation of medical protocols into intuitive, task-oriented support, whilst actively addressing the contextual reality of scattered infrastructures \cite{wentzel_keeping_an_eye,Kip2025CeHRes}. Prior works have successfully empoloyed the roadmap to map stakeholder mental models and ensure organizational alignment \cite{wentzel_keeping_an_eye}. However, many existing studies fail to traverse the framework in full, omitting the final phase of a live system deployment and its summative evaluation \cite{ganjali_2024_ivrs}. This study positions itself to address that methodological gap by detailing a complete execution of the full CeHRes Roadmap culminating in a containerized and live deployment. 
+
+Lastly, the iterative and summative evaluation of modern health technologies requires a shift away from ad-hoc mechanisms into standardized and reliable evaluation instruments \cite{sharifikia_2022_health,woodard_2018_the}. To address this, this study implements the User Experience Questionnaire (UEQ) as a mathematically sound framework for subjective quality assessment \cite{aldikushendriawan_2021_evaluating}. The UEQ hierarchy evaluates user experience (UX) across six distinct, semantic scales, splitting the metrics into pragmatic quality (comprising \textit{Perspicuity}, \textit{Efficiency}, and \textit{Dependability}) and hedonic quality (comprising \textit{Stimulation} and \textit{Novelty}), anchored on a global \textit{Attractiveness} baselines \cite{laugwitz_2008_construction}. Through the implementation of this standardized toolkit alongside explorartory testing cyles, the evaluation paradigm treats UX as a dynamic and evolving process \cite{laugwitz_2008_construction,schrepp_2023_user}. Providing a transparent, benchmarked assessment of how stakeholder satisfaction changes as a digital health intervention progresses from prototyping to live deployment \cite{hinderks_user,schrepp_2023_user}. 
+
 
 
 %% ============================================================
@@ -187,32 +237,104 @@ A CeHRes Roadmap Application for Care Coordination in the Philippines}
 %% Must be reproducible: a reader should understand how to replicate your study.
 %% ============================================================
 \section{Methodology}
+\label{sec:methodology}
 
-\subsection{Research Design}
-% State your overall approach: action research / design science research /
-% user-centered iterative development — whichever framing fits your work.
-% Briefly justify why this design is appropriate.
+\subsection{Co-Design Framework: Traversal of the CeHRes Roadmap}
+\label{sub:cehres_traversal}
+This study adopts a research paradigm focus on user-centered and iterative software development \cite{lewis2012usability,shore2021art}. Briding the operational gap between institutional information systems and outpatient care coordination workflows, the development process fully traverses the five highly interrelated phases of the CeHRes Roadmap 2.0, connected by continuous evaluation cycles \cite{Kip2025CeHRes}. 
 
-\subsection{CeHRes Roadmap Application}
-% Walk through each phase of the CeHRes Roadmap as you applied it:
-%   - Contextual Inquiry (stakeholder interviews: Dr. Rodriguez, Dr. Javier)
-%   - Value Specification
-%   - Design
-%   - Operationalization
-%   - Summative Evaluation
-% Include your DFD, UCD, and activity diagrams where appropriate
-% (use \includegraphics with images from sp-manuscript/images/).
+\begin{enumerate}
+  \item \textit{Contexual Inquiry}: Grounding the system requirements in stakeholder context, the existing outpatient workflows was documented through interviews with domain experts paired with a semi-structured user-requirements definition survey distributed to the target outpatient populus \cite{Kip2025CeHRes}. These activities exposed an overwhelming reliance on informal messaging channels to negotiate appointment scheduling due to the complete lack of integration with the institute's public-facing interfaces \cite{Kip2025CeHRes}.
+  \item \textit{Value Specification}: Qualitative themes and infrastructural deficits identified during the contetual inquiry were aggregated into a formalized requirements traceability matrix (RTM) \cite{Kip2025CeHRes}. Specific stakeholder value were translated into measureable technical requiremnets, immediately mandating a live clinician directory, automated document generation, and a physical kiosk for handoff capbility \cite{Kip2025CeHRes}. 
+  \item \textit{Design}: Development advanced from low-fidelity static wireframe prototypes ideated with stakeholders in Whimsical to a fully functional high-fidelity prototype \cite{Kip2025CeHRes}. Refinement throughout this phase was explicitly driven by stakeholder feedback loops using a specialized unmoderated testing protocol. 
+  \item \textit{Operationalization}: Progressing the high-fidelity prototype to production, a stable Minimum Viable Product (MVP) was defined, containerized, and deployed within a sandboxed environment on the Railway cloud platform to completely isolate web traffic fom live hospital workflows \cite{Kip2025CeHRes}.
+  \item \textit{Summative Evaluation}: The final phase saw the execution of an unmoderated two-week Simple Remote Exploratory Test (SRET) to monitor real-time issue resolution, followed by the deployment of the UEQ \cite{Kip2025CeHRes,schrepp_2023_user}.
+\end{enumerate}
 
-\subsection{System Architecture}
-% Describe the technical design of Alagang MMC:
-%   - Key modules: Clinician Profile Manager, Appointment Management,
-%     Clinician Directory, Account Creation, Appointment Booking
-%   - Technology stack
-%   - Include your ERD and pipeline diagram if relevant
+\subsection{System Architecture and Technical Engineering}
+\label{sub:tech_engr}
 
-\subsection{Evaluation Approach}
-% Describe how you evaluated: UEQ, sprint-based usability testing,
-% participants (patients, secretaries, clinicians), protocol.
+The resulting DHI was engineered as a multi-interface, decoupled web application with four levels of operational responsibility: Patients, Secretaries, Clinicians, and System Administrator. The technical architecture is built around a containerized development stack setup via Docker to enforce cross-service boundary security and reduce cross-site scripting vulnerabilities with operational boundaries and constraints mapped in Figure~\ref{fig:use_case_diagram}. 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.85\linewidth]{images/ch-4/UCD.drawio.png}
+    \caption{Multi-role system boundaries and interface use cases for the care coordination platform.}
+    \label{fig:use_case_diagram}
+\end{figure}
+
+The application layers are primarily segregated into three components: 
+\begin{itemize}
+  \item \textbf{Frontend Interfaces}: Developed on the React-Vite framework to guarantee high client-side rendering speeds and fluid responsiveness across both desktop and mobile web-browsers. 
+  \item \textbf{Backend Engine}: Developed on Python leveraging Flask, with the API layer implementing an object-relational mapping tier to securely execute transactional database commands. 
+  \item \textbf{Database}: Built on a management PostgreSQL relational instance handling the structured entity records. The database design is anchored by three primary relational entities: \texttt{PATIENT} (non-diagnostic profiling and authentication credentials); \texttt{CLINICIAN\_SCHEDULE} (holding weekly schedule of clinician split into AM/PM time pairs); and \texttt{APPOINTMENT} (relational mapping of foreign keys linking patient IDs, time-slots, and real-time status changes).  
+\end{itemize}
+
+% PLACEHODLER \cite KIOSK LANDING AND \cite CLINCIAN PROFILE 
+In order to integrate physical walk-in users with the digital environment, an on-site touch kiosk was developed. Set to be implemented within a system containing a projected capacitive touch terminal running Windows 10 IoT Enterprise, the kiosk operates on a shared frontend codebase. When a walk-in patient selects a clinician who is currently unavailable, the terminal generates a real-time QR code handoff. ALlowing the patient to seamless transfer their session and complete the multi-step appointment booking process securely on their mobile device. The transaction pathways and backend operations are documented in Figure~\ref{fig:panel_dfd}
+
+\begin{figure*}[htbp]
+    \centering
+    \begin{subfigure}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/ch-4/level-0-dfd.png}
+        \caption{Level 0 DFD: System boundary and macro data flows.}
+        \label{fig:l0_dfd}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/ch-4/level-1-dfd.png}
+        \caption{Level 1 DFD: Decomposed internal processes and data stores.}
+        \label{fig:l1_dfd}
+    \end{subfigure}
+    \caption{Data Flow Diagrams outlining enterprise architectural pipelines and transactional records boundaries.}
+    \label{fig:panel_dfd}
+\end{figure*}
+
+
+\subsection{Formalization of the Triage Engine}
+\label{sub:triage_math}
+Aimed at mitigating the friction caused by local ``specialist-first'' consulting bias, the digitized triage engine was engineering into the core naviation component \cite{Lajeunesse2012}. Evolving form a static and arbitrary symptom mapping schema, the second-generation engine implements an additive diagnostic heuristic adapted from Friedman's Problem-Oriented Medical Diagnosis framework \cite{friedman1991pomd}. The functional path executing this is mapped visibly in Figure~\ref{fig:activity_diagram}. 
+
+The engine treats the incoming patient as an immutable data tuple $(s, a, x)$, where $s$ is a symptom identifier selected from the bounded patient homunculus diagram, $a$ is an ordinal age-range modifier, and $x \in \{\text{male}, \text{female}, \text{decline}\}$ represents biological sex \cite{friedman1991pomd}. The heuristic evaluates the candidate clincial specialty score using the following formulation: 
+
+$$\text{Score}(\sigma \mid s, a, x) = B(\sigma, s) + A(\sigma, s, a) + X(\sigma, s, x)$$
+
+where $\sigma$ denotes a target medical specialty, $B(\sigma, s)$ represents the empirical base likelihood weight mapping a symptom to a specialty independent of demographic factors, $A(\sigma, s, a)$ is the additive age modifier adjustment, and $X(\sigma, s, x)$ is the additive biological sex modifier adjustment \cite{friedman1991pomd}.
+
+The triage component computes this score across all specialties currently mapped within the system \cite{friedman1991pomd}. The highest-scoring specialty is passed directly to the clinician directory interface as a query parameter to automatically filter the visible the clincians: 
+
+$$\sigma_{\text{referred}} = \arg\max_{\sigma} \left[ \text{Score}(\sigma \mid s, a, x) \right]$$
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.55\linewidth]{images/ch-4/activity-diagram.png}
+    \caption{Activity Diagram tracking the evidence-based routing and appointment booking execution loop.}
+    \label{fig:activity_diagram}
+\end{figure}
+
+All computed values are processed in applicaiton memory and explicitly restricted from being written to permanent storage or appended visibly to URL strings, ensuring further complicance with human subject data boundaries. 
+
+\subsection{Mixed-Method Evaluation Protocol}
+\label{sub:eval_protocol}
+
+The evaluation framework utilizes a mixed-method framework aimed at capturing user experience as a dynamic process. This paradigm consists of a two-week qualitative feedback cycle follwoed immediately by a quantitative metric baseline \cite{laugwitz_2008_construction,schrepp_2023_user}. 
+
+The qualitative evaluation saw the Simple Remote Exploratory Test (SRET) across two one-week cycles \cite{lewis2012usability}. Participants were issued the necessary materials and assigned high-level, open-ended operational goals \cite{lewis2012usability}. This approach forced users to erly on natural mental models rather than rigid step-by-step instructions \cite{lewis2012usability}.  Real-time UX hiccups and system bugs were logged dynamically via Google Forms and iteratively resolved between cycles \cite{lewis2012usability}. 
+
+Immediately after, summative evaluation was administered, utilizing the standardized UEQ toolkit to acquire the multi-dimensional metric breakdown \cite{laugwitz_2008_construction,hinderks_user}. The questionnaire maps 26 bipolar semantic items across a seven-stage differential scale, loading directly into six overarching dimensions of system design quality \cite{laugwitz_2008_construction,hinderks_user}: 
+
+\begin{enumerate}
+    \item \textit{Attractiveness}: Global systemic impression baseline (6 items) \cite{laugwitz_2008_construction}.
+    \item \textit{Pragmatic Quality Scales}: Comprising \textit{Perspicuity} (ease of learning; 4 items) \cite{laugwitz_2008_construction}, \textit{Efficiency} (cognitive speed; 4 items) \cite{laugwitz_2008_construction}, and \textit{Dependability} (perceived user control; 4 items) \cite{laugwitz_2008_construction}.
+    \item \textit{Hedonic Quality Scales}: Comprising \textit{Stimulation} (engagement; 4 items) \cite{laugwitz_2008_construction} and \textit{Novelty} (perceived design innovation; 4 items) \cite{laugwitz_2008_construction}.
+\end{enumerate}
+
+In order to ensure complete consistency during statistical aggregation, the evaluation medium enforces standardized Inconsistent and Identical Answers heuristics \cite{schrepp_2023_user}. Responses are discarded if the item-distance within a single scale flags an outlier threshold of >3 units, or if a participant submits more than 15 identical scalar answers across the instrument \cite{schrepp_2023_user}. The internal scale consistency is continuously monitored through the computation of Cronbach's alpha ($\alpha$) coefficient \cite{schrepp_2023_user}. 
+
+$$\alpha = \frac{n \cdot \bar{r}}{1 + (n - 1) \cdot \bar{r}}$$
+
+where $n$ represents the precise item count allocated per scale and $\bar{r}$ denotes the mean inter-item correlation matrix computed across the dataset \cite{schrepp_2023_user}. Scale means falling within the interval $[-3.0, +3.0]$ are evaluated, where a mean score $\bar{x} > +0.8$ mathematically establishes a positive evaluation \cite{schrepp_2023_user}.
 
 
 %% ============================================================
@@ -221,19 +343,112 @@ A CeHRes Roadmap Application for Care Coordination in the Philippines}
 %% Use tables and figures to present data efficiently.
 %% ============================================================
 \section{Results}
+\label{sec:results}
 
-\subsection{Usability and User Experience Findings}
-% Present UEQ results (benchmark comparison, scale scores).
-% Reference your benchmark figure and scale structure figure.
-% State which aspects scored above/below benchmark and what that means.
+The human-centered software engineering paradigm yielded a fully deployed, production-ready care coordination ecosystem supplemented by an empirical baseline of its operational, in-context performance. Reflective of the intertwined nature of the CeHRes roadmap, the resutls track the system's progression from quantitative psychometrics mapping to longitudinal qualtiative cycle progressions and high-fidelity deployments. 
 
-\subsection{Stakeholder Feedback}
-% Qualitative findings from sprint reviews, bug reports,
-% and clinician/patient interviews.
-% Tie back to your three research questions.
+\subsection{Quantitatiev Psychometrics Dimensions}
+\label{sub:ueq_findings}
 
-\subsection{System Outcomes}
-% Any quantitative metrics on system usage or workflow improvement.
+Summative verification of the deployed system architecture was established using the standardized UEQ analysis toolkit \cite{laugwitz_2008_construction,hinderks_user}. The evaluation tool was administered to the active stakeholder testing group ($n=14$) immediately after live execution windows to evaluate immediate user impressions across 26 bipolar semantic items \cite{laugwitz_2008_construction,schrepp_2023_user}. The calculated scale metrics, variance lmits, and internal consistency parameters are detailed in Table~\ref{sub:ueq_metrics_full}.
+
+\begin{table}[htbp]
+    \centering
+    \small
+    \caption{Evaluation Metrics Derived via the Standardized UEQ Data Analysis Tool ($n=14$) \cite{schrepp_2023_user}.}
+    \label{tab:ueq_metrics_full}
+    \begin{tabular}{|l|c|c|c|c|}
+        \hline
+        \textbf{UEQ Scale} & \textbf{Mean ($\bar{x}$)} & \textbf{Std. Dev. ($\sigma$)} & \textbf{User Agreement} & \textbf{Cronbach's $\alpha$} \\ \hline
+        Attractiveness & 1.74 & 0.85 & Medium & 0.86 \\ \hline
+        Perspicuity    & 1.84 & 0.75 & High   & 0.60 \\ \hline
+        Efficiency     & 1.88 & 0.87 & Medium & 0.79 \\ \hline
+        Dependability  & 1.50 & 0.95 & Medium & 0.80 \\ \hline
+        Stimulation    & 1.36 & 1.00 & Medium & 0.89 \\ \hline
+        Novelty        & 0.55 & 1.11 & Low    & 0.84 \\ \hline
+    \end{tabular}
+\end{table}
+
+The system evaluated strongly positively ($\bar{x} > +0.8$) across five of the six core scales \cite{schrepp_2023_user}. Pragmatic quality dimensions exhibited exceptional ratings, represented by low cognitive friction during objective executive (\textit{Efficiency} $\bar{x} = 1.88$) and sytem-wide learnability for first-time users (\textit{Perspicuity} $\bar{x} = 1.84$) \cite{laugwitz_2008_construction,schrepp_2023_user}. Internal scale consistency met the thresholds required for software verification, with all calculated Cronbach's alpha ($\alpha$) values safely at or exceeding the reliable metric baseline of 0.60 \cite{schrepp_2023_user}. 
+
+Further contextualizing the platform's UX quality, scale means were put against the UEQ benchamrk dataset as illustrated in Figure~\ref{fig:ueq_plots_panel}.
+
+\begin{figure}[htbp]
+    \centering
+    \begin{subfigure}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/ch-5/ueq/scale_means_plot.png}
+        \caption{Scale means distribution.}
+        \label{fig:ueq_scale_means}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/ch-5/ueq/benchmark.png}
+        \caption{Benchmark comparison.}
+        \label{fig:ueq_benchmark_comparison}
+    \end{subfigure}
+    \caption{Quantitative user experience trajectories plotted against the global UEQ reference dataset \cite{hinderks_user, schrepp_2023_user}.}
+    \label{fig:ueq_plots_panel}
+\end{figure}
+
+Five of the six scales landed cleanly within the \textbf{Good} performance window, establishing that the human-centered approach ranks within the top 25\% of benchmarked consumer and enterprise software products globally \cite{hinderks_user}. In contrast, the lower and more neutral metric observed for the \textit{Novelty} scale ($\bar{x} = 0.55$) is representative of a highly predictable and methodologically reasonable result within the context of the health informatics domain \cite{schrepp_2023_user}. For systems hosting a medical scheduling and triage engine, system predictability, interface control, and strict clarity are quite prioritized over novel, experimental, or plain unfamiliar layout aesthetics \cite{laugwitz_2008_construction}. 
+
+\subsection{Longitudinal Qualitative Progression}
+\label{sub:stakeholder_feedback}
+The qualtiative evaluation phases mapped the progressive trajectory of user behavior, capturing direct impacts of co-creation activities to systematically answer the initial research questions. 
+
+\begin{itemize}
+  \item \textbf{Addressing Ineffective Coordination}: Initial survey data ($n=26$) confirmed prudent process hurdles within local institutions' traditional care coordination practices. Overwhelming, outpatients reported that physical concierges were consistently congested, directly causing routing delays. Moreover, over 30 unique reports document an insecure, manual reliance on informal digital mediums such as Rakuten Viber or SMS for negotiating clinician availability, further leading to frequent appointment appointment mismanagement and distributed burden \cite{Rodriguez_A,Chang682}. 
+  \item \textbf{Impact of Stakeholder-Driven Development}: The two-week Simple Remote Exploratory Test (SRET) provided empirical proof that iterative co-creative cycles can nurture direct software quality improvements \cite{lewis2012usability,Kip2025CeHRes}. During SRET Week 1 ($n=12$), participants logged high success rates for macro goals (11/12 for triage, 12/12 for appointment booking), but uncovered 21 unique technical and usability issues \cite{lewis2012usability}. Such roadblocks were processed through the action pipeline and patched prior to the next cycle \cite{lewis2012usability}.
+  
+  By the following week ($n=14$), objective completion rates scaled up to 13/14 across all mobile and document generation fields \cite{lewis2012usability}. Notably, participant feedback shifted from critical error reporting to expressions of high system satisfaction, proving that consistent engagement with stakeholder testing groups positively impacts software refinement cycles \cite{lewis2012usability}. 
+\end{itemize}
+
+\subsection{Technical System Implementations}
+\label{sub:system_outcomes}
+
+In order to address the need for localized and evidence-bnased care coordination platforms (\textit{RQ2}), the high-fidelity prototype was able to achive full operational deployment on the Railway production platform. Selections from the completed interfaces are organized in Figure~\ref{fig:system_screenshots_panel}.
+
+\begin{figure*}[htbp]
+    \centering
+    \begin{subfigure}[t]{0.24\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/ch-5/patient-scs/guided-search/4.png}
+        \caption{Patient triage map.}
+        \label{fig:out_triage}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.24\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/ch-5/patient-scs/5.png}
+        \caption{Slot picker viewport.}
+        \label{fig:out_booking}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.24\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/ch-5/doc-scs/1.png}
+        \caption{Secretary dashboard.}
+        \label{fig:out_secretary}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.24\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{images/ch-5/kiosk-scs/3.png}
+        \caption{Kiosk QR handoff.}
+        \label{fig:out_kiosk}
+    \end{subfigure}
+    \caption{High-fidelity interface implementations of the deployed multi-role care coordination platform across distinct user-role boundaries.}
+    \label{fig:system_screenshots_panel}
+\end{figure*}
+
+As detailed in Figure~\ref{fig:system_screenshots_panel}, the core components achieve operational functionality across all targeted domains: 
+\begin{enumerate}
+  \item \textit{Patient-Facing Component}: Implemented the interactive homunculus body map (Figure~\ref{fig:out_triage}) to drive the multi-dimensional additive heuristic. The computed score successfully passes query parameters to filter the clinician directory, routing the patient directly to the integrated slot picker (Figure~\ref{fig:out_booking}) displaying real-time clinician availability. 
+  \item \textit{Clinician-Secretary Component}: Consolidated once fragmented commnication channels into a central, unified user interface (Figure~\ref{fig:out_secretary}). Secretaries can update profiles, generate docuemnts, and update appointment statuses in real-time with audit trails. 
+  \item \textit{Kiosk Application}: The kiosk application operates on a shared responsive grid layout. For walk-in patients selecting an unavailable clinician, the terminal generates a QR code (Figure~\ref{fig:out_kiosk}), enabling a touchless state handoff to continue the scheduling workflow on the user's mobile device. 
+\end{enumerate}
 
 
 %% ============================================================
@@ -242,33 +457,50 @@ A CeHRes Roadmap Application for Care Coordination in the Philippines}
 %% ~600–900 words.
 %% ============================================================
 \section{Discussion}
+\label{sec:discussion}
+The empirical and qualitative findings of this study demonstate a distinct viability of leveraging HCD frameworks to overhaul fragmented clinical care cooridnation workflows within developing healthcare infrastructures. This section will evaluating the study's findings against broader digital health literature, critiquing the co-creative methodology as a software engineering paradigm, and address the limitations of the study. 
 
-\subsection{Implications for Digital Health in the Philippines}
-% What do your results mean for HIS adoption in developing-country hospitals?
-% Connect to Sucaldito et al., Livieri et al., Libadia et al.
+\subsection{Socio-Technical Implications for Local Digital Health Adoption}
+\label{sub:imps_local_health}
+Prior works consistently identify poor strategy, low stakeholder alignment, and a lack of care for human factors as the primary failure points for HIS implementations \cite{sucaldito_2025_challenges,garcia_2021_health}. Through the successful live production deployment scoring in the the upper quartile of the global UEQ benchmark dataset, this study presents a valuable proof-of-concept for overcoming these implementation barriers \cite{hinderks_user,schrepp_2023_user}. With regional evaluations often flagging low governance scores due to a rigid top-down deployment protocols \cite{sucaldito_2025_challenges}, the results confirm a reliable care coordination platform integrating natively into an institution's exisitng workflow ecosystem heavily boosts user complicance, workplace productivity, and overall system trust \cite{libadia_2025_development,oconnor_2016_understanding}. 
 
-\subsection{HCD and the CeHRes Roadmap as a Framework}
-% How did stakeholder-driven development influence outcomes (RQ3)?
-% Compare to Landeiro et al. or similar HCD-in-healthcare work.
+Moreover, the system design directly confronts the unique socio-cultural ralities of the local population. As opposed to ignoring the prevalent ``specialist-first'' consulting mindset and the corresponding lack of primary-care gatekeepers \cite{Lajeunesse2012}, the platform's mutli-interface architecture actively accommodates this mindset throug hthe decentralized clinician directory and on-site QR handoff mechanics. This approach works towards bridging generational technology gaps and directly reduces the scattered burdens that build mistrust in healthcare technologies \cite{livieri_2025_the}. Consolidating these formerly disjoint communication mediums into a singular, traceable transactional framework demonstrating that software safety and efficiency can be co-engineering wihtout distrupting ingrained patient consulting behaviors. 
+\subsection{Refleciton on the CeHres Roadmap}
+\label{sub:ceh_reflection}
+Critically traversing all five phases of the CeHRes Roadmap 2.0 poisitioned this study to treat UX as an active, evolving software refinement lifecyle as opposed to a static post-development metric \cite{Kip2025CeHRes,ganjali_2024_ivrs}. The structured methodology of this study directly answers the third research question (\textit{RQ3}) in regards to the operational influence of stakeholder-driven engineering. The qualitative SRET cycle progression clearly presented that actively integrating user feedback loops between development cycles directly drove the positive user sentiment reflected in the quantitative UEQ evaluations \cite{lewis2012usability,schrepp_2023_user}. 
 
-\subsection{Limitations}
-% Be honest: single-site study, sample size, generalizability,
-% any technical constraints. This strengthens credibility.
-
-
+The holistic co-design paradigm explicitly underscores the high user ratings observed in the pragmatic dimensions of \textit{Efficiency} ($\bar{x}=1.88$) and \textit{Perspicuity} ($\bar{x}=1.84$), ensuring that the technology accurately aligns with the workflows of patients, medical secretaries, and clinical staff alike \cite{laugwitz_2008_construction,schrepp_2023_user}. Where traditional digital health literature concentreated heavily on condition-specific interventions built to serve isolated patient populations \cite{landeiro_2025_humancentered,woodard_2018_the}, this study proved that the pillars of the CeHRes roadmap are equally effective when applied to instituional, multi-role care coordination problems that intersect across diverse medical departments. 
+\subsection{Methodological and Technical Limitations}
+\label{sub:limitations}
+Despite the presented empirical and qualitative outcomes across the evaluation cycles, several structural limitations need to be addressed: 
+\begin{itemize}
+  \item \textbf{Sample Size and Statistical Precision}: Although the particpant pool ($n=14$) meets the verified minimum baseline for usage of the UEQ, there exist statistical constraints. Recruiting a small evaluation group leaves much to be desired for the confidence interval margin, inherently limiting the generalizability of the quantiative resutls.
+  \item \textbf{Single-Site and Departmental Boundaries}: The nature of implementation narrowed down the deployment to a single department, where the system's weighting tables (\texttt{triageLogic.js}) are optimized for a specific outpatient subgroup. The underlying system arthictecture is department-agonistic, the clinical validity and safety metrics of the triage engine have not been formally measured or verified acorss diverse medical sub-specialties. 
+  \item \textbf{Operational Scope Restrictions}: To guarantee architectural stability for the primary patient-clinician coordination flow, a number of advanced system features were scaffolded and deployments deferred; the system currently contains technical scaffolds for an assissted booking feature for elderly or assisted populations. 
+  \item \textbf{Language and Infrastructure Components}: Although the outcomes of initial activities highlighted a relatively strong stakeholder preference for multi-language localization layers, the production build was restricted to a singular verifiable English layer. A deliberate compromise to eliminate the critical risk of automated or imprecise translation leading to grave clinical miscommunications during symptom triage. Finally, a fully automated email conifrmation routing had operated at limited capacity due to associated infrastructure costs. 
+\end{itemize}
 %% ============================================================
 %% SECTION 6: CONCLUSION
 %% ~200–350 words. No new information. Summarize contribution,
 %% answer your three RQs, and state future work.
 %% ============================================================
 \section{Conclusion}
-% TODO: Summarize:
-%   - What you built and why
-%   - Direct answers to your three research questions
-%   - Significance of using HCD/CeHRes for care coordination
-%   - Future work: expansion beyond MMC, integration with iHIMS,
-%     longitudinal adoption studies, etc.
+\label{sec:conclusion}
+This study documents the systematic traversal ofthe CeHRes Roadmap to design, deploy, and evaluate a multi-role digital care cooridnation platform within a private tertiary hospital in the Philippines. Through the establishment of a human-centered development lifecyle, this work directly addresses three core research questions. 
 
+First, in regards to patient experiences within traditional care structures (\textit{RQ1}), the contextual inquiry verified that outpatients face severe process hurdles, including an overwhelming operational reliance on informal digital communcation channels to negotiate clinician availability, creating a highly vulnerable and distributed human burden. 
+
+Second, in regards to the implementation (\textit{RQ2}), the study successfully constructed an integrated, multi-interface system featuring dedicatec components for patients, secretaries, and clinicians, accompanied by a kiosk application capable of executing state handoff to users' personal mobile devices. Critically, the platform overrides regional consulting biases by employing an evidence-based triage sorcing heuristic driven by an additive multi-dimensional matrix. 
+
+Third, in regards to stakeholder (\textit{RQ3}), the evaluation loops demonstrate the positive impact of active incorporation of iterative user feedback, driving direct measureable software quality enhancements. The nature of this co-design paradigm led to high objective completion rates during beta testing, a definitive qualitative shift from error reporting to evident user satisfaction, and exceptionally positive UEQ metrics positioning the platform's pragmatic usabilit yscales in the upper quartile of the global benchmark dataset. 
+
+Cumulatively, this study serves as a valuable proof-of-concept demosntrating that anchoring DHIs to specialzied co-creative roadmaps succesfully mitigates the human and organizational misalignment issues commonly plaguiing hospital informatics deploymentsin developing contexts. 
+
+Future researches are recommended to focus on expanding the platform's current operational footprint thorugh the following avenues: 
+\begin{itemize}
+  \item \textbf{Phased Rollout}: Execute a scaled and institution-wide expansion through engaging representative domain experts from adjacent departments to refine and validate the triage engine's addtive weighting parameters across the relevant medical sub-specialties \cite{friedman1991pomd,siriban2026}. 
+  \item \textbf{Clinical Accuracy and Dependent Modeling}: Conducting clinical validation studies to measure the exact diagnostic routing accuracy of the problem-oriented logic whilst deploying a fully funtional multi-user depndent booking modes to improve the system's accessibility for elderly or assisted users \cite{friedman1991pomd,siriban2026}. 
+\end{itemize}
 
 %% ============================================================
 %% ACKNOWLEDGMENTS
@@ -276,13 +508,7 @@ A CeHRes Roadmap Application for Care Coordination in the Philippines}
 %% Do NOT include your adviser here if they are a co-author above.
 %% ============================================================
 \begin{acks}
-  % TODO: Acknowledge funding sources, research participants (can be kept
-  % anonymous as "the clinicians and staff of MMC who participated"),
-  % and any institutional support.
-  %
-  % Example: "The authors thank the clinicians, secretaries, and patients
-  % of Makati Medical Center who participated in this study. This work
-  % was supported by [funding source, if any]."
+  The author expresses their deepest thansk to the administrative leadership, clinical domain experts, secretaries, and general participants at the partner institution who generously volunteered their time, operational insights, and candid feedback throughout the study period. A grateful acknowledgement is extended to the tecnical collaborators who assisted with containerized deployment scaffolding and infrastructure configuration.
 \end{acks}
 
 %% ============================================================
